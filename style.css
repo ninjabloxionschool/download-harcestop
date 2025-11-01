@@ -1,43 +1,52 @@
-body {
-  font-family: "Figtree", sans-serif;
-  text-align: center;
-  padding-top: 80px;
-  background: #f9f9f9;
-  color: #222;
+:root{
+  --bg: #f9f9f9;
+  --text: #222;
+  --accent: #0078ff;
 }
 
-h1 {
-  font-weight: 600;
-  font-size: 1.8em;
-  margin-bottom: 0.5em;
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
 }
 
-p {
-  font-weight: 400;
-  font-size: 1.1em;
+.wrap{
+  max-width:720px;
+  width:100%;
+  text-align:center;
+  background:white;
+  padding:36px;
+  border-radius:12px;
+  box-shadow:0 6px 30px rgba(0,0,0,0.06);
 }
 
-a#lien {
-  color: #0078ff;
-  text-decoration: none;
-  font-weight: 500;
+h1{font-size:1.6rem;font-weight:700;margin-bottom:16px}
+p{font-size:1rem;color:#444;line-height:1.4;margin-top:12px}
+
+a{
+  color: var(--accent);
+  text-decoration:none;
+  font-weight:500;
+}
+a:hover{text-decoration:underline}
+
+/* loader */
+.loader{
+  margin:18px auto;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:5px solid #eee;
+  border-top-color:var(--accent);
+  animation:spin 1s linear infinite;
 }
 
-a#lien:hover {
-  text-decoration: underline;
-}
-
-.loader {
-  margin: 30px auto;
-  border: 4px solid #ddd;
-  border-top: 4px solid #0078ff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes spin{
+  to{transform:rotate(360deg)}
 }
