@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Téléchargement en cours...</title>
+
+  <!-- Police Figtree -->
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet">
+
+  <!-- Fichier CSS externe -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Votre téléchargement va commencer automatiquement...</h1>
+  <div class="loader"></div>
+  <p>Si le téléchargement ne démarre pas, 
+     <a id="lien" href="tonfichier.zip" download>cliquez ici pour télécharger</a>.
+  </p>
+
+  <script>
+    window.onload = function() {
+      const lien = document.createElement("a");
+      lien.href = "tonfichier.zip"; // 🔹 Remplace par ton vrai nom de fichier
+      lien.download = "";
+      document.body.appendChild(lien);
+      lien.click();
+      document.body.removeChild(lien);
+    };
+  </script>
+</body>
+</html>
